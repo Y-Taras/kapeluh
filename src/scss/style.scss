@@ -16,7 +16,7 @@ body, html {
   position: relative;
 }
 body {
-  background: url("img/images.jpeg") 100% 100% repeat;
+  background: url("/img/images.jpeg") 100% 100% repeat;
   background-size: cover;
 }
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
@@ -32,9 +32,6 @@ p {
   max-width: 100%;
   margin: 10px 0 20px 0;
   border: 1px solid #ddd;
-  -webkit-box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
-  -o-box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -141,7 +138,7 @@ li a.nav-link {
   display: inline-block;
   height: 20px;
   width: 30px;
-  background: url("./favicon1.jpg") no-repeat;
+  background: url("../favicon/favicon1.jpg") no-repeat;
 }
 nav {
   max-width: 1150px;
