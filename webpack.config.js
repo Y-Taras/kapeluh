@@ -5,7 +5,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-
+let entries = [];
+//https://github.com/jantimon/html-webpack-plugin/issues/1174
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
   return templateFiles.map(item => {
@@ -23,7 +24,7 @@ function generateHtmlPlugins(templateDir) {
 const htmlPlugins = generateHtmlPlugins("./src/html/views");
 
 const config = {
-  entry: ["./src/js/index.js", "./src/scss/style.scss"],
+  entry: ["./src/js/index.js", "./src/scss/style.scss"].concat(),
   output: {
     filename: "./js/bundle.js"
   },
