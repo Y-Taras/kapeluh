@@ -5,8 +5,11 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-let entries = [];
+
+
 //https://github.com/jantimon/html-webpack-plugin/issues/1174
+const entries = fs.readdirSync(path.resolve(__dirname, "./src/js"));
+
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
   return templateFiles.map(item => {
@@ -15,6 +18,7 @@ function generateHtmlPlugins(templateDir) {
     const extension = parts[1];
     return new HtmlWebpackPlugin({
       filename: `${name}.html`,
+      chunks: entries.includes(name)[`${name}.js`] ? `${name}.js` : null,
       template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
       inject: false
     });
@@ -22,9 +26,9 @@ function generateHtmlPlugins(templateDir) {
 }
 
 const htmlPlugins = generateHtmlPlugins("./src/html/views");
-
+_entries = entries.map(item => `./src/js/${item}`);
 const config = {
-  entry: ["./src/js/index.js", "./src/scss/style.scss"].concat(),
+  entry: [..._entries, "./src/scss/style.scss"],
   output: {
     filename: "./js/bundle.js"
   },
