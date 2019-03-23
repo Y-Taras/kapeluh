@@ -9,6 +9,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 //https://github.com/jantimon/html-webpack-plugin/issues/1174
 const entries = fs.readdirSync(path.resolve(__dirname, "./src/js"));
+console.log('entries', entries);
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -16,25 +17,31 @@ function generateHtmlPlugins(templateDir) {
     const parts = item.split(".");
     const name = parts[0];
     const extension = parts[1];
-    return new HtmlWebpackPlugin({
+    let plugin = new HtmlWebpackPlugin({
       filename: `${name}.html`,
-      chunks: entries.includes(name)[`${name}.js`] ? `${name}.js` : null,
+      chunks: entries.includes(`${name}.js`) ? [name] : null,
       template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
       inject: false
     });
+    return plugin;
   });
 }
 
 const htmlPlugins = generateHtmlPlugins("./src/html/views");
+console.log(htmlPlugins);
+
 _entries = entries.map(item => `./src/js/${item}`);
 const config = {
   entry: [..._entries, "./src/scss/style.scss"],
   output: {
-    filename: "./js/bundle.js"
+    filename: "./js/[name].bundle.js"
   },
   devtool: "source-map",
   mode: "production",
   optimization: {
+    splitChunks: {
+      chunks: 'all'
+    },
     minimizer: [
       new TerserPlugin({
         sourceMap: true,

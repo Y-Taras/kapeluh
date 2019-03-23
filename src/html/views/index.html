@@ -1,9 +1,10 @@
 <% var data = {
 title: "Парапети на паркан,бетонні вироби декоративні, дашки, капелюхи на паркан, в м. Надвірна, Івано - Франківськ та області",
 rights: "Copyright © 2017-2018-2019 Розробник сайту &lt; \"Y Studio\" &gt;",
-author: "This site is developed and maintained by Vasyl Yaremkiv. All Rights Reserved."
+author: "This site is developed and maintained by Vasyl Yaremkiv. All Rights Reserved.",
+scriptName: "index"
 }; %>
-<%= _.template(require('./../includes/header.html'))(data) %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
 
 <!-- Image fixed-->
 <div class='container' id='bl'>
@@ -50,4 +51,4 @@ author: "This site is developed and maintained by Vasyl Yaremkiv. All Rights Res
   </div>
 </div>
 
-<%= _.template(require('./../includes/footer.html'))(data) %>
+<%= _.template(require('./../includes/footer.html').default)(data) %>
