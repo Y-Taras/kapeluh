@@ -1,13 +1,17 @@
 $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
 
+@import "custom";
 @import "~bootstrap/scss/bootstrap";
 
-@font-face {
+@import "price";
+
+
+/*@font-face {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   src: url(../fonts/Roboto-Regular.ttf);
-}
+}*/
 
 
 body, html {
@@ -16,10 +20,10 @@ body, html {
   position: relative;
 }
 body {
-  background: url("/img/images.jpeg") 100% 100% repeat;
+  background: url("../img/images.jpeg") 100% 100% repeat;
   background-size: cover;
 }
-article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+/*article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
   display: block;
 }
 p {
@@ -138,7 +142,7 @@ li a.nav-link {
   display: inline-block;
   height: 20px;
   width: 30px;
-  background: url("../favicon/favicon1.jpg") no-repeat;
+  background: url("../favicon/favicon.ico") no-repeat;
 }
 nav {
   max-width: 1150px;
@@ -171,4 +175,4 @@ ul{
     opacity: 1;
     font: 1.5em sans-serif;
   }
-}
+}*/
