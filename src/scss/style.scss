@@ -3,7 +3,10 @@ $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica 
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 
+@import "base/helpers";
+@import "layout/header";
 @import "pages/price";
+
 
 
 /*@font-face {
