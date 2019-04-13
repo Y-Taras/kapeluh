@@ -3,8 +3,10 @@ $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica 
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 
+@import "base/base";
 @import "base/helpers";
 @import "layout/header";
+@import "layout/footer";
 @import "pages/price";
 
 
@@ -16,10 +18,7 @@ $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica 
   src: url(../fonts/Roboto-Regular.ttf);
 }*/
 
-body {
-  background: url("../img/images.jpeg") 100% 100% repeat;
-  background-size: cover;
-}
+
 
 /*article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
   display: block;
