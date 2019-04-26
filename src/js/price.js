@@ -14,6 +14,14 @@ document.addEventListener(
           let array = data.feed.entry;
           let lastCell = array[array.length - 1]["gs$cell"];
           const _entry = data.feed.entry.map(item => item.content["$t"]);
+          let obj = {
+            parapety: [],
+            kapeluhy: [],
+            inshe: []
+          };
+          let priceArr = _entry.map( item => {
+
+          });
           console.log("Список: ", {_entry});
           console.log(
             "Розмір таблиці: рядків: ",
@@ -22,6 +30,38 @@ document.addEventListener(
             lastCell.col
           );
         });
+
+/*
+model
+        {
+        parapet: [
+          { imgName: '',
+            description: '',
+            variants: [
+              {
+                dimension: '',
+                price: ''
+              },
+              {
+                dimension: '',
+                price: ''
+              },
+              {
+                dimension: '',
+                price: ''
+              },
+              {
+                dimension: '',
+                price: ''
+              },
+              {
+                dimension: '',
+                price: ''
+              }
+            ]
+          }
+        ]
+      }*/
 
 /*      // a function to build a list
       let makeTemplate = function (data) {
