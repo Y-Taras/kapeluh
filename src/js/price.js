@@ -2,47 +2,30 @@ const googleSheetLink =
   "https://spreadsheets.google.com/feeds/cells/1fpm1AjYJInjZJTjffAqJVmnI3Ju_AvNc8FTj-AREehg/1/public/full?alt=json";
 const imgRegexp = /\.(gif|jpg|jpeg|tiff|png)$/i;
 
-/*function reformArray(arr) {
-  const newArray = [];
-
-  arr
-    .filter((item, index) => {
-      return !imgRegexp.test(arr[index + 1])
-    })
-    .forEach((item, index) => {
-        imgRegexp.test(item) ?
-          newArray.push([item]) :
-          newArray[newArray.length - 1].push(item)
+function convertArray(arr) {
+  let indices = []; // image indexes
+  arr.forEach((item, index) => {
+    if (imgRegexp.test(item)) {
+      indices.push(index);
+    }
+  });
+  return [...new Array(indices.length)].map((item, index) => {
+    let i = indices[index];
+    let sliceEnd = indices[index + 1] ? indices[index + 1] - 1 : arr.length;
+    let variants = [];
+    arr.slice(i + 2, sliceEnd).forEach((item, index) => {
+      if (index % 2 === 0) {
+        variants.push({dimension: item});
+      } else {
+        variants[(index - 1) / 2].price = item; //add property price to previously created object
       }
-    );
-  return newArray;
-}*/
-
-function reformArray(arr) {
-  const newArray = [];
-  let i;
-
-  arr
-    .filter((item, index) => {
-      return !imgRegexp.test(arr[index + 1])
-    })
-    .forEach((item, index) => {
-        if (imgRegexp.test(item)) {
-          newArray.push({imgName: item});
-          i = index;
-        } else if (i === index - 1) {
-          newArray[newArray.length - 1].description = item;
-          newArray[newArray.length - 1].variants = [];
-        } else if ( index%2 === 0 ) {
-          newArray[newArray.length - 1].variants.push({
-            dimension: item,
-            price: arr[index + 1]
-          })
-        }
-        //newArray[_index].push(item)
-      }
-    );
-  return newArray;
+    });
+    return {
+      imgName: arr[i],
+      description: arr[i + 1],
+      variants
+    };
+  });
 }
 
 document.addEventListener(
@@ -65,52 +48,13 @@ document.addEventListener(
           });
           const titlesShift = 5;
           let obj = {
-            parapety: _entry.slice(titlesShift, indexesHash[1]),
-            kapeluhy: _entry.slice(indexesHash[1] + titlesShift, indexesHash[2]),
-            inshe: _entry.slice(indexesHash[2] + titlesShift)
+            parapety: convertArray(_entry.slice(titlesShift, indexesHash[1])),
+            kapeluhy: convertArray(_entry.slice(indexesHash[1] + titlesShift, indexesHash[2])),
+            inshe: convertArray(_entry.slice(indexesHash[2] + titlesShift))
           };
-          console.log(reformArray(obj.parapety));
-          let priceArr = _entry.findIndex(item => {
-            item;
-          });
-          console.log(indexesHash);
           console.log(obj);
-
-          console.log("Список: ", {_entry});
-          console.log( "Таблиця: ", lastCell.col, " X ", lastCell.row);
+          console.log("Таблиця: ", lastCell.col, " X ", lastCell.row);
         });
-
-      /*
-      model
-              {
-              parapet: [
-                { imgName: '',
-                  description: '',
-                  variants: [
-                    {
-                      dimension: '',
-                      price: ''
-                    },
-                    {
-                      dimension: '',
-                      price: ''
-                    },
-                    {
-                      dimension: '',
-                      price: ''
-                    },
-                    {
-                      dimension: '',
-                      price: ''
-                    },
-                    {
-                      dimension: '',
-                      price: ''
-                    }
-                  ]
-                }
-              ]
-            }*/
 
       /*      // a function to build a list
             let makeTemplate = function (data) {
