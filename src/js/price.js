@@ -54,26 +54,41 @@ document.addEventListener(
           };
           console.log(obj);
           console.log("Таблиця: ", lastCell.col, " X ", lastCell.row);
-        });
 
-      /*      // a function to build a list
-            let makeTemplate = function (data) {
-              let newList = "";
-              data.forEach(function (element) {
-                newList += `<li>${element}</li>`;
-              });
-              return newList;
-            };
+          // a function to build a list
+          const template = list => `
+            
+            ${list.map((item, index) => `
+              <div class="row">
+                <div class="col-sm-1">
+                  ${index + 1}
+                </div>
+                <div class="col-sm-5">
+                  <img src="img/${item.imgName}" alt="">
+                  <br/>
+                  <span>${item.description}</span>
+                </div>
+                <div class="col-sm-6">
+                  ${item.variants.map(variant => `
+                    <span class="">
+                      ${variant.dimension}
+                    </span>
+                    <span class="">
+                      ${variant.price}
+                    </span>
+                  `).join('')}
+                </div>
+               </div>
+            `).join('')}
+            `;
 
-            // build a container template
-            let template = `  <div class="row">
-
-        </div><ul>+
-                              ${makeTemplate()}
-                            </ul>`;*/
-
-      // add the template to the page
-      // document.querySelector('.price-table').innerHTML = template;
+          // add the template to the page
+          Object
+            .entries(obj)
+            .forEach(
+              ([key, value]) => document.querySelector(`.price-${key}-list`).innerHTML = template(value)
+            );
+        })
     }
   },
   false
