@@ -70,12 +70,14 @@ document.addEventListener(
                 </div>
                 <div class="col-sm-6">
                   ${item.variants.map(variant => `
+                  <div>
                     <span class="">
                       ${variant.dimension}
                     </span>
                     <span class="">
-                      ${variant.price}
+                      ${variant.price}грн
                     </span>
+                  </div>
                   `).join('')}
                 </div>
                </div>
