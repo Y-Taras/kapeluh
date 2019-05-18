@@ -56,25 +56,21 @@ document.addEventListener(
           console.log("Таблиця: ", lastCell.col, " X ", lastCell.row);
 
           // a function to build a list
-          const template = list => `
-            
+          const template = list => `            
             ${list.map((item, index) => `
-              <div class="row">
-                <div class="col-sm-1">
-                  ${index + 1}
-                </div>
-                <div class="col-sm-5">
-                  <img src="img/${item.imgName}" alt="">
-                  <br/>
+              <div class="row price-row">
+                <div class="col-sm-1">${index + 1}</div>
+                <div class="col-sm-8 price-description">
+                  <img src="img/${item.imgName}" alt="" class="price-image">
                   <span>${item.description}</span>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-3 price-variants">
                   ${item.variants.map(variant => `
-                  <div>
-                    <span class="">
+                  <div class="row">
+                    <span class="col">
                       ${variant.dimension}
                     </span>
-                    <span class="">
+                    <span class="col">
                       ${variant.price}грн
                     </span>
                   </div>
