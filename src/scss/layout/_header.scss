@@ -1,3 +1,4 @@
+$header-background:#9496ad;
 .header {
   border-bottom: 1px solid #e2e2e2;
   background-color: $header-background;
@@ -14,11 +15,12 @@
       text-decoration: none;
       background-color: #9496ad;
       border-radius: 0.2rem;
-      color: #2e3047
+      color: #696b81
     }
   }
 
   &__brand--text {
+    color: rgb(240, 233, 233);
   }
 
   &__link {
@@ -27,7 +29,7 @@
     padding: .5rem 0 .5rem 0.5rem;
 
     @include hover-focus-active {
-      color: hsla(0, 0%, 100%, 1);
+      color: rgb(235, 204, 27);
       text-decoration: none;
     }
 

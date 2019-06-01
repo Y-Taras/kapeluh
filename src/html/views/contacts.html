@@ -1,0 +1,15 @@
+<% var data = {
+    title: "Парапети на паркан,бетонні вироби декоративні, дашки, капелюхи на паркан, в м. Надвірна, Івано - Франківськ та області",
+    }; %>
+    <%= _.template(require('./../includes/header.html').default)(data) %>
+    <div class='container shadow-lg p-4  bg-secondary rounded border'  id='bl-3'>
+        <h2 class="text-center">Як нас знайти в м. Надвірна?</h2>
+    </div>
+       
+    
+    <div class='container shadow-lg p-3 mb-5 bg-secondary rounded'>
+    <div id="map"></div>
+    </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHJyUqsrz-sBCRxwAkIeWaEqbAJJF8Ebg&callback=initMap">
+    </script>
+    <%= _.template(require('./../includes/footer.html').default)(data) %>

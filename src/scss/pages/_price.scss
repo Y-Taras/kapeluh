@@ -1,4 +1,43 @@
+$bgColor:#c2c3ca;
 .price {
   &-table {
+        border: 6px solid #ad949e;
+        background-color: $bgColor;
+        margin-top: 1.35rem;
   }
+  &-parapety,
+  &-kapeluhy,
+  &-inshe{
+    border: none;
+    text-align: center;
+   &-header{
+      background-color: #cfc6c2;
+      border: 6px solid #b8b5b6;  
+    } 
+    
+  }
+    &-row {
+      display: flex;
+     // text-align: center;
+      //flex-wrap: wrap;
+      //max-height: 290px;  
+   }
+  &-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @media (max-width: 576px)  {
+      align-items: center;
+    }
+  }
+
+  &-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 290px;
+    border: 1px solid #065bb1;
+  }
+  
 }
+  
+

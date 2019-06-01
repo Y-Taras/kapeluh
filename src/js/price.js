@@ -68,11 +68,11 @@ document.addEventListener(
                   <br/>
                   <span>${item.description}</span>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-3">
                   ${item.variants.map(variant => `
                   <div>
-                    <span class="">
-                      ${variant.dimension}
+                    <span class="col-sm-3">
+                      ${variant.dimension}см---
                     </span>
                     <span class="">
                       ${variant.price}грн
