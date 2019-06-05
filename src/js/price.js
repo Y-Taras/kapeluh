@@ -53,7 +53,7 @@ document.addEventListener(
             inshe: convertArray(_entry.slice(indexesHash[2] + titlesShift))
           };
           console.log(obj);
-          console.log("Таблиця: ", lastCell.col, " X ", lastCell.row);
+          console.table("Таблиця: ", lastCell.col, " X ", lastCell.row);
 
           // a function to build a list
           const template = list => `
@@ -80,7 +80,7 @@ document.addEventListener(
                   </div>
                   `).join('')}
                 </div>
-               </div>
+              </div>
             `).join('')}
             `;
 

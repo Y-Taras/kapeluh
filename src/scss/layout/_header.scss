@@ -29,7 +29,7 @@ $header-background:#9496ad;
     padding: .5rem 0 .5rem 0.5rem;
 
     @include hover-focus-active {
-      color: rgb(235, 204, 27);
+      color: rgb(245, 244, 243);
       text-decoration: none;
     }
 
@@ -41,7 +41,7 @@ $header-background:#9496ad;
 
   &__item {
     @include hover-focus-active {
-      background-color: #3d405f;
+      background-color: #d2d3e2;
       // background-color: lighten($header-background, 10%);
       border-radius: 0.2rem;
     }

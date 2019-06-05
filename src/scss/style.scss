@@ -207,3 +207,11 @@ p .thick{
   margin-top: 3.6rem;
  
 }
+#par,#part {
+  position: relative;
+  top: 0.6rem;
+  max-width: 100%;
+  margin: 50px 0 20px 0;
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
+}
