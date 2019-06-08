@@ -173,10 +173,10 @@ ul{
     font: 1.5em sans-serif;
   }
 }*/
-h1,h3 {
+h1,h4 {
   text-align: center;
   text-transform: uppercase;
-  color: rgb(91, 98, 112);
+  color: rgb(172, 133, 83);
 }
 
 p .thick{
@@ -185,14 +185,14 @@ p .thick{
   font-weight: bold;
 }
 @media screen and (min-width:200px) and (max-width:1024px) {
-  h1,h3 {
+  h1,h4 {
     text-align: center;
     font-size:18px;
  font-weight:normal;
  padding:0px 0 0px;
  line-height:100%;
  font-style:italic;
-    color: rgb(67, 46, 105);
+    color: rgb(67, 46, 105) !important;
   }
 }
 .navbar-nav{

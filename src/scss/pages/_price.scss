@@ -1,9 +1,18 @@
 $bgColor:#c2c3ca;
+#bl{
+  position: sticky;
+  top: 3.5rem;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #a7acb0;
+  z-index: -5;
+}
 .price {
   &-table {
         border: 6px solid #ad949e;
         background-color: $bgColor;
         margin-top: 1.35rem;
+        z-index: 99;
   }
   &-parapety,
   &-kapeluhy,
@@ -35,7 +44,7 @@ $bgColor:#c2c3ca;
     max-width: 100%;
     height: auto;
     max-height: 290px;
-    border: 1px solid #065bb1;
+    border: 5px solid #065bb1;
   }
   
 }
@@ -46,7 +55,7 @@ hr {
   margin-left: auto;
   margin-right: auto;
   border-style: inset;
-  border-width: 1px;
+  border-width: 5px;
   z-index: 9999;
 } 
 

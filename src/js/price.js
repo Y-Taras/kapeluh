@@ -68,14 +68,14 @@ document.addEventListener(
                   <br/>
                   <span>${item.description}</span>
                 </div>
-                <div class="col-sm-3">
+                <div  class="col-sm-6">
                   ${item.variants.map(variant => `
-                  <div>
-                    <span class="col-sm-3">
-                      ${variant.dimension}см---
+                  <div style="border:1px solid black">
+                    <span  class="col-sm-3">
+                     ширина ${variant.dimension}см---
                     </span>
-                    <span class="">
-                      ${variant.price}грн
+                    <span class="col-sm-3">
+                     ціна ${variant.price}грн
                     </span>
                   </div>
                   `).join('')}
