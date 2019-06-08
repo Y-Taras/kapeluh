@@ -72,7 +72,7 @@ document.addEventListener(
                   ${item.variants.map(variant => `
                   <div style="border:1px solid black">
                     <span  class="col-sm-3">
-                     ширина ${variant.dimension}см---
+                     розмір ${variant.dimension}см---
                     </span>
                     <span class="col-sm-3">
                      ціна ${variant.price}грн
@@ -80,7 +80,7 @@ document.addEventListener(
                   </div>
                   `).join('')}
                 </div>
-              </div>
+              </div><hr>
             `).join('')}
             `;
 
