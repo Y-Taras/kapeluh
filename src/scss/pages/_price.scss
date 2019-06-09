@@ -7,13 +7,17 @@ $bgColor:#c2c3ca;
   background-color: #a7acb0;
   z-index: -5;
 }
-
 .price {
   &-table {
         border: 6px solid #ad949e;
         background-color: $bgColor;
         margin-top: 1.35rem;
         z-index: 99;
+  }
+  
+  &-img {
+
+    cursor:pointer;
   }
   &-parapety,
   &-kapeluhy,

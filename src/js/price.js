@@ -83,7 +83,7 @@ document.addEventListener(
               </div><hr>
             `).join('')}
             `;
-
+            
           // add the template to the page
           Object
             .entries(obj)
@@ -91,7 +91,10 @@ document.addEventListener(
               ([key, value]) => document.querySelector(`.price-${key}-list`).innerHTML = template(value)
             );
         })
+        
     }
+    
   },
   false
+  
 );
