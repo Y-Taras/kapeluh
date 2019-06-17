@@ -28,13 +28,18 @@ $bgColor:#c2c3ca;
       background-color: #cfc6c2;
       border: 6px solid #b8b5b6;  
     } 
-    
+   
   }
     &-row {
       display: flex;
-     // text-align: center;
-      //flex-wrap: wrap;
-      //max-height: 290px;  
+      text-align: center;
+      flex-wrap: wrap;
+      max-height: 290px;  
+   }
+   &-outer{
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
    }
   &-description {
     display: flex;
@@ -45,12 +50,7 @@ $bgColor:#c2c3ca;
     }
   }
 
-  &-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 290px;
-    border: 5px solid #065bb1;
-  }
+ 
   
 }
 hr {

@@ -46,7 +46,7 @@ document.addEventListener(
             }
             return item.content["$t"];
           });
-          const titlesShift = 5;
+          const titlesShift = 3;
           let obj = {
             parapety: convertArray(_entry.slice(titlesShift, indexesHash[1])),
             kapeluhy: convertArray(_entry.slice(indexesHash[1] + titlesShift, indexesHash[2])),
@@ -63,19 +63,19 @@ document.addEventListener(
                 <div class="col-sm-1">
                   ${index + 1}
                 </div>
-                <div class="col-sm-5">
+                <div id="1" class="col-sm-5">
                   <img src="img/${item.imgName}" alt="">
                   <br/>
                   <span>${item.description}</span>
                 </div>
                 <div  class="col-sm-6">
                   ${item.variants.map(variant => `
-                  <div style="border:1px solid black">
-                    <span  class="col-sm-3">
-                     розмір ${variant.dimension}см---
+                  <div class="outer" style="height:30px; border:1px solid black; background-color:#a7acb0;">
+                    <span class="col">
+                     ${variant.dimension}
                     </span>
-                    <span class="col-sm-3">
-                     ціна ${variant.price}грн
+                    <span  class="col">
+                     ${variant.price}
                     </span>
                   </div>
                   `).join('')}
