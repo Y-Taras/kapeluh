@@ -29,8 +29,7 @@ $header-background:#9496ad;
     padding: .5rem 0 .5rem 0.5rem;
 
     @include hover-focus-active {
-      color: rgb(245, 244, 243);
-      text-decoration: none;
+      color: #dd1414;
     }
 
     @media (min-width: 992px) {
@@ -41,9 +40,54 @@ $header-background:#9496ad;
 
   &__item {
     @include hover-focus-active {
-      background-color: #d2d3e2;
+      background-color: #8b8eb9;
       // background-color: lighten($header-background, 10%);
       border-radius: 0.2rem;
     }
+  }
+}
+.navbar-toggler {
+  background-color: #555353d4;
+}
+.nav-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  transition: .4s;
+  height: 5px;
+  z-index: 1;
+  border-radius: 8px 8px 0 0;
+}
+
+.nav-item:not(.is-active):hover:before {
+  opacity: 1;
+  bottom: 0;
+}
+
+
+.nav-item:not(.is-active):hover {
+   color: #333;
+   }
+
+.nav-item {
+  color: #83818c;
+  text-decoration: none;
+  transition: .5s;
+  z-index: 1;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #dfe2ea;
+    border-radius: 8px 8px 0 0;
+    opacity: 0;
+    transition: .3s;
   }
 }

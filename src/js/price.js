@@ -1,7 +1,8 @@
+import 'bootstrap';
 const googleSheetLink =
   "https://spreadsheets.google.com/feeds/cells/1fpm1AjYJInjZJTjffAqJVmnI3Ju_AvNc8FTj-AREehg/1/public/full?alt=json";
 const imgRegexp = /\.(gif|jpg|jpeg|tiff|png)$/i;
-
+/** */
 function convertArray(arr) {
   let indices = []; // image indexes
   arr.forEach((item, index) => {
@@ -60,22 +61,22 @@ document.addEventListener(
             
             ${list.map((item, index) => `
               <div class="row">
-                <div class="col-sm-1">
+                <div class="col-s-1 col-md-1">
                   ${index + 1}
                 </div>
-                <div id="1" class="col-sm-5">
+                <div id="1" class="col-s-5 col-md-5">
                   <img src="img/${item.imgName}" alt="">
                   <br/>
                   <span>${item.description}</span>
                 </div>
-                <div  class="col-sm-6">
+                <div  class="col-s-6 col-md-6">
                   ${item.variants.map(variant => `
                   <div class="outer" style="height:30px; border:1px solid black; background-color:#a7acb0;">
-                    <span class="col">
-                     ${variant.dimension}
+                    <span class="col-6 col-md-5">
+                     ${variant.dimension}см
                     </span>
-                    <span  class="col">
-                     ${variant.price}
+                    <span  class="col-6 col-md-5">
+                     ${variant.price}грн
                     </span>
                   </div>
                   `).join('')}
