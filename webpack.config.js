@@ -8,8 +8,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 
 //https://github.com/jantimon/html-webpack-plugin/issues/1174
-const entries = fs.readdirSync(path.resolve(__dirname, "./src/js"));
-console.log('entries', entries);
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -26,6 +24,8 @@ function generateHtmlPlugins(templateDir) {
 }
 
 const htmlPlugins = generateHtmlPlugins("./src/html/views");
+const entries = fs.readdirSync(path.resolve(__dirname, "./src/js"));
+console.log('entries', entries);
 
 _entries = entries.map(item => `./src/js/${item}`);
 const config = {
