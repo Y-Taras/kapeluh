@@ -81,11 +81,11 @@ document.addEventListener(
             `;
 
           // add the template to the page
-          Object
+/*          Object
             .entries(obj)
             .forEach(
               ([key, value]) => document.querySelector(`.price-${key}-list`).innerHTML = template(value)
-            );
+            );*/
         })
     }
   },

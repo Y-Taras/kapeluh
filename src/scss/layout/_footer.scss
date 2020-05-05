@@ -1,7 +1,6 @@
 .footer {
-  color: #383d41;
+  color: #d1d2d3;
   &__top {
-    background-color: #e9ecef;
     padding-top: 7px;
   }
 
@@ -31,10 +30,8 @@
   }
 
   &__bottom {
-    background-color: #dee2e6;
     font-size: 0.8rem;
     text-align: center;
     padding: 4px 0;
-
   }
 }
