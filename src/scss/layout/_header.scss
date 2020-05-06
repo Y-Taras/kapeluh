@@ -1,6 +1,9 @@
 .header {
   border-bottom: 1px solid #e2e2e2;
   background-color: $header-background;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 
   &__brand {
     display: inline-block;
@@ -40,8 +43,11 @@
   &__item {
     @include hover-focus-active {
       background-color: #3d405f;
-      // background-color: lighten($header-background, 10%);
       border-radius: 0.2rem;
     }
+  }
+
+  &__item--active {
+    border: 1px solid lightgray;
   }
 }

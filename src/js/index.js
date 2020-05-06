@@ -1,5 +1,5 @@
 import 'bootstrap';
-
+// Google analytics
 var analytics = true;
 try {
   if (
@@ -29,3 +29,24 @@ if (analytics) {
 } else {
   console.log('Google Analytics has been disabled');
 }
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+    //Bootstrap navbar hide on click outside
+    document.addEventListener('click', evt => {
+      const isNavbarTogglerActive = evt.target && evt.target.classList.contains('navbar-toggler');
+      const isMobileMenuOpen = document.getElementsByClassName("navbar-collapse")[0].classList.contains("show");
+      if (isMobileMenuOpen === true && !isNavbarTogglerActive) {
+        document.querySelector("button.navbar-toggler").click();
+      }
+    })
+
+    //Add white border to current tag
+    if (window.location.pathname) {
+      const activeCssClass = 'header__item--active'
+      const path = window.location.pathname;
+      const currentAnchor = document.querySelector(`a[href$='${path}']`)
+      currentAnchor.classList.add(activeCssClass);
+    }
+  });
