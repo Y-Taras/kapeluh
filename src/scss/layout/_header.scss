@@ -48,6 +48,15 @@
   }
 
   &__item--active {
-    border: 1px solid lightgray;
+    border-top: 3px solid lightgray;
+    border-bottom: 2px solid lightgray;
+    margin-top: -3px;
+  }
+
+  @media screen and (max-width: 991px) {
+    &__item--active {
+      border-top-width: 1px;
+      margin-top: 0;
+    }
   }
 }

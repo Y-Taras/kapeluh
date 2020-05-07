@@ -72,7 +72,7 @@ document.addEventListener(
                     </span>
                     <span class="col">
                       ${variant.price}грн
-                    </span>
+                    </span>A
                   </div>
                   `).join('')}
                 </div>

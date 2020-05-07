@@ -45,7 +45,14 @@ document.addEventListener(
     //Add white border to current tag
     if (window.location.pathname) {
       const activeCssClass = 'header__item--active'
-      const path = window.location.pathname;
+      let path = window.location.pathname;
+      if (path.startsWith('/article')) {
+        path = '/articles.html'
+      }
+      if (path.startsWith('/wiki')) {
+        path = '/wiki.html'
+      }
+
       const currentAnchor = document.querySelector(`a[href$='${path}']`)
       currentAnchor.classList.add(activeCssClass);
     }
