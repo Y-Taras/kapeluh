@@ -11,14 +11,6 @@ $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica 
 @import "pages/contacts";
 @import "pages/article";
 
-
-.article {
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
 body, html {
   height: 100%;
   min-height: 100%;

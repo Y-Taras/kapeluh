@@ -15,7 +15,7 @@
 
     @include hover-focus-active {
       text-decoration: none;
-      background-color: #9496ad;
+      background-color: lighten($header-background, 20%);
       border-radius: 0.2rem;
       color: #2e3047
     }
@@ -42,7 +42,7 @@
 
   &__item {
     @include hover-focus-active {
-      background-color: #3d405f;
+      background-color: lighten($header-background, 20%);
       border-radius: 0.2rem;
     }
   }
