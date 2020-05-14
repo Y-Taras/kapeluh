@@ -11,21 +11,7 @@ $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica 
 @import "pages/contacts";
 @import "pages/article";
 
-body, html {
-  height: 100%;
-  min-height: 100%;
-  position: relative;
-  background: url("../img/spey2.jpg") 100% 100% repeat;
-  background-attachment: fixed;
-  overflow-x: hidden;
 
-}
-article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
-  display: block;
-}
-.col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
-  float: left;
-}
 .prod-item {
   text-align: center;
 }
@@ -236,48 +222,7 @@ footer a{
 .sticky-top{
   position: relative;
 }
-/*nav {
-  display: inline-flex;
-  position: relative;
-  overflow: hidden;
-  max-width: 100%;
-  margin: 0 auto;
-  margin-right: auto;
-  margin-left: auto;
-  background:
-      rgb(77, 81, 119) !important;
-  padding: 0 2px;
-}
 
-.navbar-light .navbar-brand{
-  color: rgb(190, 183, 183);
-
-}
-nav ul li a {
-  font-size: 22px;
-  color: rgba(246, 248, 245, 0.5) !important;
-  background-color: #6c757d !important;
-  border-color: rgb(197, 172, 31) !important;
-  margin-left: 3px
-}
-nav ul li a:hover {
-
-  color: rgb(230, 16, 87) !important;
-  background-color: #becad4 !important;
-  border-color: rgb(197, 172, 31) !important;
-  margin-left: 2px
-}
-.navbar-toggler {
-  color: rgba(207, 26, 26, 0.5);
-  border-color: rgba(202, 28, 81, 0.85);
-  background-color: rgb(242, 213, 53);
-}
-ul{
-  margin-top: .5em;
-}
-.navbar-right {
-  float: left !important;
-}*/
 .btn {
   box-shadow: 5px 5px 0 RGB(121, 106, 95);
   margin-left: 4px
