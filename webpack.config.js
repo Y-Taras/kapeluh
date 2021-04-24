@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -31,6 +31,7 @@ _entries = entries.map(item => `./src/js/${item}`);
 const config = {
   entry: [..._entries, "./src/scss/style.scss"],
   output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: "./js/bundle.js"
   },
   devtool: "source-map",
