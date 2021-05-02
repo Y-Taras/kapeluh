@@ -1,6 +1,9 @@
 body {
-  background: url("../img/images.jpeg") 100% 100% repeat;
-  background-size: cover;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  background: url("../img/spey2.jpg") repeat fixed 100% 100%;
+  overflow-x: hidden;
 }
 
 ul,

@@ -86,3 +86,4 @@ dll
 docs
 dist/
 
+/.prettierrc
