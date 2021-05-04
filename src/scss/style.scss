@@ -11,18 +11,7 @@ $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica 
 @import "pages/contacts";
 @import "pages/article";
 
-.card-img:before:hover {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #000;
-  }
-  .card-img:hover {
-  transform: translateY(10px);
-  }
+
 .prod-item {
   text-align: center;
 }
