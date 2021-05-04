@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -40,7 +40,6 @@ const config = {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        sourceMap: true,
         extractComments: true
       })
     ]
@@ -65,20 +64,21 @@ const config = {
           {
             loader: "postcss-loader",
             options: {
-              ident: "postcss",
               sourceMap: true,
-              plugins: () => [
-                require("cssnano")({
-                  preset: [
-                    "default",
-                    {
-                      discardComments: {
-                        removeAll: true
+              postcssOptions: {
+                plugins: () => [
+                  require("cssnano")({
+                    preset: [
+                      "default",
+                      {
+                        discardComments: {
+                          removeAll: true
+                        }
                       }
-                    }
-                  ]
-                })
-              ]
+                    ]
+                  })
+                ]
+              },
             }
           },
           {
@@ -100,24 +100,26 @@ const config = {
     new MiniCssExtractPlugin({
       filename: "./css/style.bundle.css"
     }),
-    new CopyWebpackPlugin([
-      {
-        from: "./src/fonts",
-        to: "./fonts"
-      },
-      {
-        from: "./src/favicon",
-        to: "./favicon"
-      },
-      {
-        from: "./src/img",
-        to: "./img"
-      },
-      {
-        from: "./src/other",
-        to: "./"
-      }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "./src/fonts",
+          to: "./fonts"
+        },
+        {
+          from: "./src/favicon",
+          to: "./favicon"
+        },
+        {
+          from: "./src/img",
+          to: "./img"
+        },
+        {
+          from: "./src/other",
+          to: "./"
+        }
+      ]
+    })
   ].concat(htmlPlugins)
 };
 
